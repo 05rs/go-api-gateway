@@ -1,0 +1,17 @@
+# Configuration for GoFile API Gateway
+
+rateLimitWindow: 10s  # Adjust the rate limit window as needed
+rateLimitCount: 5
+
+# Service registration (replace with your actual service URLs)
+services:
+  upload:
+    base_url: http://localhost:8081  # Base URL for the upload service
+    routes:
+      - path: /health  # Route for upload hearbeat
+      - path: /files/{id}  # Route for specific file access by ID
+  analytics:
+    base_url: http://localhost:8082  # Base URL for the analytics service
+    routes:
+      - path: /health  # Route for analytics hearbeat
+     
